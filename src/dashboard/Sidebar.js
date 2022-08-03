@@ -11,7 +11,7 @@ const Sidebar = () => {
                 <li class="nav-item sidebar-brand">
                     {/* eslint-disable-next-line */}
                         <a>
-                            <img src="./assets/images/flagship_logo_mark-01.png" alt="..." />
+                            <img src="./assets/images/flagship_logo_standard.jpg" alt="..." />
                         </a>
                 </li>
                     </Link>
@@ -24,7 +24,7 @@ const Sidebar = () => {
                         role="button"
                         data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        Applications for flagship
+                        Applications
                     </a>
                     {/* </Link> */}
                     <ul class="dropdown-menu">

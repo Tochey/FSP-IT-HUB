@@ -24,7 +24,7 @@ const Sidebar = () => {
                         role="button"
                         data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        Applications
+                        Applications for flagship
                     </a>
                     {/* </Link> */}
                     <ul class="dropdown-menu">

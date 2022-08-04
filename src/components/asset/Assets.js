@@ -1,78 +1,104 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import './assets.css'
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import moment from 'moment';
+import axios from 'axios'
 
 const Assets = () => {
   let userInput;
+  const [startDate, setStartDate] = useState(new Date());
   const [info, setInfo] = useState({
-    fname: null,
-    lname: null,
+    firstName: "",
+    lastName: "",
     packageNumber: 0,
-    purchaseDate: null
+    purchaseDate: moment(startDate).format('MMM D, YYYY')
   });
 
 
   const handleChange = (e) => {
-    e.preventDefault();
-    userInput = e.target.value;
-    setInfo({
-      ...info,
-      [e.target.name]: userInput,
-    });
+
+    if (e.target) {
+      e.preventDefault();
+      userInput = e.target.value;
+      setInfo({
+        ...info,
+        [e.target.name]: userInput,
+      });
+    } else {
+      setInfo({
+        ...info,
+        purchaseDate: moment(e).format('MMM D, YYYY'),
+      });
+    }
   }
 
   const handlePost = function () {
-    // axios.post("/v1/add", info).then((e) => {
-    //   alert(e.data)
-    // })
-      // .catch((e) => alert(e.response.data))
+  
+    axios.post("https://vzouk5y25m.execute-api.us-east-1.amazonaws.com/testing/call", info).then((e) => {
+      alert(e.data)
+    })
+    .catch((e) => alert(e.response()))
+    
+
 
     setInfo({
-      fname: null,
-      lname: null,
+      firstName: "",
+      lastName: "",
       packageNumber: 0,
-      purchaseDate: null
+      purchaseDate: moment(startDate).format('MMM D, YYYY')
     })
     document.querySelectorAll("#to-clear").forEach((e) =>
       e.value = ""
     );
   }
-  
 
   return (
     <>
-    <div className="main-container">
-      <header>
-      </header>
-      <div className="login-box">
-        <h5>Assign Employee Assets</h5>
-        <form>
-          <div className="user-box">
-            <input type="text" name="fname" required id="to-clear" onChange={(e) => handleChange(e)} />
-            <label>First Name</label>
-          </div>
-          <div className="user-box" >
-            <input type="text" name="lname" required id="to-clear" onChange={(e) => handleChange(e)} />
-            <label>Last Name</label>
-          </div>
-          <div className="user-box">
-            <input type="text" name="packageNumber" id="to-clear" required onChange={(e) => handleChange(e)} />
-            <label>WFH number </label>
-          </div>
-          <div className="user-box">
-            <input type="text" name="purchaseDate" id="to-clear" placeholder="MM/DD/YY" required onChange={(e) => handleChange(e)} />
-            <label>purchase Date </label>
-          </div>
-          {/* eslint-disable-next-line */}
-          <a onClick={handlePost}>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Send
-          </a>
-        </form>
+      <div className="main-container">
+        <header>
+        </header>
+        <div className="login-box">
+          <h5>Assign Employee Assets</h5>
+          <form>
+            <div className="user-box">
+              <input type="text" name="firstName" required value={info.firstName} id="to-clear" onChange={(e) => handleChange(e)} />
+              <label className='form-label'>First Name</label>
+            </div>
+            <div className="user-box" >
+              <input type="text" name="lastName" required id="to-clear" value={info.lastName} onChange={(e) => handleChange(e)} />
+              <label className='form-label' >Last Name</label>
+            </div>
+            <div className="user-box" >
+              {/* <input type="text" name="lname" required id="to-clear" onChange={(e) => handleChange(e)} /> */}
+              <select name="packageNumber" onChange={((e) => handleChange(e))}>
+                <option value={0}>Please select</option>
+                <option value={1}>WFH MAC, 24"x2</option>
+                <option value={2}>WFH MAC, 32"x1</option>
+                <option value={3}>WFH WINDOWS, 24"x2</option>
+                <option value={4}>WFH WINDOWS, 32"x1</option>
+              </select>
+
+            </div>
+
+            <div className="user-box calender">
+              <DatePicker selected={startDate} onChange={(date) => {
+                setStartDate(date)
+
+                handleChange(date)
+              }} name="purchaseDate" />
+            </div>
+            {/* eslint-disable-next-line */}
+            <a onClick={handlePost}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Send
+            </a>
+          </form>
+        </div>
       </div>
-    </div>
 
     </>
   )

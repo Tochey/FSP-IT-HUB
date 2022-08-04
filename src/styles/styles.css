@@ -28,12 +28,12 @@ body {
 
 a {
   text-decoration: none;
-  color: black;
+  /* color: black; */
 }
 
 a:hover {
   /* color: rgb(215, 210, 197); */
-  color: black;
+  /* color: black; */
 }
 
 .h1 {

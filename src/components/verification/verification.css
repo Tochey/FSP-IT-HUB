@@ -1,5 +1,13 @@
 .table-div{
    padding-top: 30px;
+   font-family: "Roboto", sans-serif;
+
+  line-height: 1.25;
+  margin: 0;
+  padding: 12px;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
 }
 #customers {
     font-family: Arial, Helvetica, sans-serif;

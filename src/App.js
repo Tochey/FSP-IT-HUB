@@ -5,7 +5,7 @@ import Assets from './components/asset/Assets'
 import Analytics from './components/Analytics'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Verification from './components/verification/Verification';
-import Offboard from './components/Offboard';
+import Offboard from './components/offboard/Offboard';
 import About from './components/About';
 
 
@@ -16,10 +16,11 @@ function App() {
         <>
         <Router >
           <Sidebar />
+          <Navbar />
             <Routes>
               <Route exact path="/" element={
                 <>
-                  <Navbar />
+                 
                   <AppCards />
                 </>
               } />

@@ -24,17 +24,10 @@ body {
 /* missalaneaous */
 .App{
   text-align: center;
+  min-height: 100vh;
 }
 
-a {
-  text-decoration: none;
-  /* color: black; */
-}
 
-a:hover {
-  /* color: rgb(215, 210, 197); */
-  /* color: black; */
-}
 
 .h1 {
   font-weight: 700;
@@ -47,6 +40,7 @@ a:hover {
   padding-left: 0;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  min-height: 100vh;
 }
 
 #wrapper.toggled {

@@ -2,20 +2,55 @@ import React, { useState, useEffect } from 'react'
 import './offboard.css'
 
 const Offboard = () => {
-    const [users, setUsers] = useState([])
+    const OktaUsers = ({query}) => {
+        const [users, setUsers] = useState([])
+        useEffect(() => {
+            fetch(`https://42fctjltu4.execute-api.us-east-1.amazonaws.com/test/getusers`).then((response) => response.json())
+                .then((res => setUsers(res)))
 
-    useEffect(() => {
-        fetch(`https://42fctjltu4.execute-api.us-east-1.amazonaws.com/test/getusers`).then((response) => response.json())
-            .then((res => setUsers(res)))
+        }, [])
 
-    }, [])
+        const filteredData = users.filter((el) => {
+            if (query.input === '') {
+                return el;
+            }
+          
+            else {
+                return el.profile.displayName.toLowerCase().includes(query)
+            }
+        })
+        return (filteredData.map((e) =>
+        <tr class="table__data-row">
+            <td colspan="2" data-label="Person & username">
+                <div>
+                    <p class="ts-user-name">{e.profile.displayName}</p>
+                    <p class="ts-user-email">{e.profile.title}</p>
+                </div>
+            </td>
+            <td colspan="2" data-label="Primary email">
+                {e.profile.email}
+            </td>
+            <td data-label="Status">
+                <button class="btn" id='offboard-btn'>Offboard</button>
+            </td>
+        </tr>
+    ))
+    }
+
+    const [inputText, setInputText] = useState("");
+    let handleChange = (e) => {
+        //convert input text to lower case
+        var lowerCase = e.target.value.toLowerCase();
+        setInputText(lowerCase);
+    };
+
 
     return (
         <div className='main-app'>
             <div class="table-section">
                 <div class="container">
                     <div class="table-header">
-                        <div class="search-box">
+                        <div class="search-box" onChange={(e) => handleChange(e)}>
                             <button class="search-button">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -60,22 +95,7 @@ const Offboard = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                {users.map((e) => 
-                                    <tr class="table__data-row">
-                                        <td colspan="2" data-label="Person & username">
-                                            <div>
-                                                <p class="ts-user-name">{e.profile.displayName}</p>
-                                                <p class="ts-user-email">{e.profile.title}</p>
-                                            </div>
-                                        </td>
-                                        <td colspan="2" data-label="Primary email">
-                                            {e.profile.email}
-                                        </td>
-                                        <td data-label="Status">
-                                            <button class="btn" id='offboard-btn'>Offboard</button>
-                                        </td>
-                                    </tr>
-                                )}
+                                    <OktaUsers query={inputText} />
                                 </tbody>
                             </table>
                         </div>

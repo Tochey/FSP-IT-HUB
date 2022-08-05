@@ -61,6 +61,17 @@ const Assets = () => {
         <div className="login-box">
           <h5>Assign Employee Assets</h5>
           <form>
+          <div className="user-box" >
+              {/* <input type="text" name="lname" required id="to-clear" onChange={(e) => handleChange(e)} /> */}
+              <select name="packageNumber" onChange={((e) => handleChange(e))}>
+                <option value={0}>Please select a company</option>
+                <option value={1}>Flagship pioneering(HQ)</option>
+                <option value={2}>FL-85</option>
+                <option value={3}>FL-81</option>
+                <option value={4}>FL-90</option>
+              </select>
+
+            </div>
             <div className="user-box">
               <input type="text" name="firstName" required value={info.firstName} id="to-clear" onChange={(e) => handleChange(e)} />
               <label className='form-label'>First Name</label>
@@ -72,7 +83,7 @@ const Assets = () => {
             <div className="user-box" >
               {/* <input type="text" name="lname" required id="to-clear" onChange={(e) => handleChange(e)} /> */}
               <select name="packageNumber" onChange={((e) => handleChange(e))}>
-                <option value={0}>Please select</option>
+                <option value={0}>Please select a package</option>
                 <option value={1}>WFH MAC, 24"x2</option>
                 <option value={2}>WFH MAC, 32"x1</option>
                 <option value={3}>WFH WINDOWS, 24"x2</option>

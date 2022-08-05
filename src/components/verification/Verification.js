@@ -5,10 +5,12 @@ const Verification = () => {
   const [state, setstate] = useState([])
 
   useEffect(() => {
-    fetch("api/v1/verify/messages")
+    fetch("https://870qyg9x52.execute-api.us-east-1.amazonaws.com/test/getallmessages")
       .then((e) => e.json())
-      .then((e) => setstate(e))
+      .then((e) => setstate(e.Items))
   }, [])
+
+  
 
   return (
     <>
@@ -22,11 +24,11 @@ const Verification = () => {
 
           {state.map((e) =>
             <tr>
-              <td>{e.time}</td>
-              <td>{e.possibleSender}</td>
+              <td>{e.date}</td>
+              <td>{e.sender}</td>
               <td>{e.message}</td>
             </tr>
-          ).reverse()}
+          )}
         </table>
       </div>
     </>

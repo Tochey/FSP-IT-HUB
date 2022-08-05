@@ -1,13 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 /* general styling */
 * {
-  --primary-color: #195bdd;
+  --primary-color: rgb(0, 109, 149);
   --table-border: #d7d7dc;
   --gray-1: #97979f;
 }
 .main-app {
-  font-family: "Roboto", sans-serif;
-
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.25;
   margin: 0;
   padding: 12px;
@@ -34,6 +33,16 @@
   border-right: 1px solid var(--table-border);
   border-bottom: 1px solid var(--table-border);
 }
+#offboard-btn{
+  color:  rgb(205, 32, 38);
+  font-weight: bold;
+  border-color:rgb(205, 32, 38);
+  border-width: 2px;
+}
+
+#offboard-btn:hover {
+  font-size: 17px;
+}
 
 /* search bar. */
 .table-header {
@@ -57,7 +66,7 @@
   border-left: 0;
   outline: none;
   font-size: 16px;
-  color: tomato;
+  color: black;
   background: none;
 }
 .search-button {
@@ -134,14 +143,15 @@ table th,
 table td {
   padding: 1rem 0.625rem;
   text-align: start;
-  font-weight: bold;
+  font-size: 14px;
 }
 
 table th {
-  font-size: 1rem;
+  font-size: .9rem;
   text-transform: uppercase;
   white-space: nowrap;
 }
+
 
 .ts-user-name {
   margin-top: 0;
@@ -197,7 +207,7 @@ table th {
   table td::before {
     content: attr(data-label);
     float: left;
-    font-weight: bold;
+    /* font-weight: bold; */
     text-transform: uppercase;
     text-align: start;
   }

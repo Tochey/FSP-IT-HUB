@@ -2,17 +2,11 @@ import React, { useState, useEffect } from 'react'
 import './offboard.css'
 
 const Offboard = () => {
-    const [users, setUsers] = useState()
+    const [users, setUsers] = useState([])
 
     useEffect(() => {
-        fetch(`https://fsp.okta.com/api/v1/users/`, {
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-                Authorization: `SSWS 00muwm4t8ZQ113ws_gxX_E-eokgN1vDJ4FSdbO396b`,
-            },
-        }).then((response) => response.json())
-            .then((res => console.log(res)))
+        fetch(`https://42fctjltu4.execute-api.us-east-1.amazonaws.com/test/getusers`).then((response) => response.json())
+            .then((res => setUsers(res)))
 
     }, [])
 
@@ -62,108 +56,26 @@ const Offboard = () => {
                                     <tr>
                                         <th colspan="2" scope="col">Person & username</th>
                                         <th colspan="2" scope="col">Primary email</th>
-                                        <th scope="col">Status</th>
+                                        <th scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                {users.map((e) => 
                                     <tr class="table__data-row">
                                         <td colspan="2" data-label="Person & username">
                                             <div>
-                                                <p class="ts-user-name">Mary Beth</p>
-                                                <p class="ts-user-email">mbeth@verify.com</p>
+                                                <p class="ts-user-name">{e.profile.displayName}</p>
+                                                <p class="ts-user-email">{e.profile.title}</p>
                                             </div>
                                         </td>
                                         <td colspan="2" data-label="Primary email">
-                                            mbeth@verify.com
+                                            {e.profile.email}
                                         </td>
                                         <td data-label="Status">
-                                            <button class="btn btn-outline-primary">Offboard</button>
+                                            <button class="btn" id='offboard-btn'>Offboard</button>
                                         </td>
                                     </tr>
-                                    <tr class="table__data-row">
-                                        <td colspan="2" data-label="Person & username">
-                                            <div>
-                                                <p class="ts-user-name">Mary Beth</p>
-                                                <p class="ts-user-email">mbeth@verify.com</p>
-                                            </div>
-                                        </td>
-                                        <td colspan="2" data-label="Primary email">
-                                            mbeth@verify.com
-                                        </td>
-                                        <td data-label="Status">
-                                            <button class="btn btn-outline-primary">Offboard</button>
-                                        </td>
-                                    </tr>
-                                    <tr class="table__data-row">
-                                        <td colspan="2" data-label="Person & username">
-                                            <div>
-                                                <p class="ts-user-name">Mary Beth</p>
-                                                <p class="ts-user-email">mbeth@verify.com</p>
-                                            </div>
-                                        </td>
-                                        <td colspan="2" data-label="Primary email">
-                                            mbeth@verify.com
-                                        </td>
-                                        <td data-label="Status">
-                                            <button class="btn btn-outline-primary">Offboard</button>
-                                        </td>
-                                    </tr>
-                                    <tr class="table__data-row">
-                                        <td colspan="2" data-label="Person & username">
-                                            <div>
-                                                <p class="ts-user-name">Mary Beth</p>
-                                                <p class="ts-user-email">mbeth@verify.com</p>
-                                            </div>
-                                        </td>
-                                        <td colspan="2" data-label="Primary email">
-                                            mbeth@verify.com
-                                        </td>
-                                        <td data-label="Status">
-                                            <button class="btn btn-outline-primary">Offboard</button>
-                                        </td>
-                                    </tr>
-                                    <tr class="table__data-row">
-                                        <td colspan="2" data-label="Person & username">
-                                            <div>
-                                                <p class="ts-user-name">Mary Beth</p>
-                                                <p class="ts-user-email">mbeth@verify.com</p>
-                                            </div>
-                                        </td>
-                                        <td colspan="2" data-label="Primary email">
-                                            mbeth@verify.com
-                                        </td>
-                                        <td data-label="Status">
-                                            <button class="btn btn-outline-primary">Offboard</button>
-                                        </td>
-                                    </tr>
-                                    <tr class="table__data-row">
-                                        <td colspan="2" data-label="Person & username">
-                                            <div>
-                                                <p class="ts-user-name">Mary Beth</p>
-                                                <p class="ts-user-email">mbeth@verify.com</p>
-                                            </div>
-                                        </td>
-                                        <td colspan="2" data-label="Primary email">
-                                            mbeth@verify.com
-                                        </td>
-                                        <td data-label="Status">
-                                            <button class="btn btn-outline-primary">Offboard</button>
-                                        </td>
-                                    </tr>
-                                    <tr class="table__data-row">
-                                        <td colspan="2" data-label="Person & username">
-                                            <div>
-                                                <p class="ts-user-name">Mary Beth</p>
-                                                <p class="ts-user-email">mbeth@verify.com</p>
-                                            </div>
-                                        </td>
-                                        <td colspan="2" data-label="Primary email">
-                                            mbeth@verify.com
-                                        </td>
-                                        <td data-label="Status">
-                                            <button class="btn btn-outline-primary">Offboard</button>
-                                        </td>
-                                    </tr>
+                                )}
                                 </tbody>
                             </table>
                         </div>

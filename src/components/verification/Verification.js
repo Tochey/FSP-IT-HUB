@@ -13,7 +13,6 @@ const Verification = () => {
 
   return (
     <>
-    <h1></h1>
       <div className='table-div'>
         <table id="customers">
           <tr>

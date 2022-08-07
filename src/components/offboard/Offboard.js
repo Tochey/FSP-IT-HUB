@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './offboard.css'
 
 const Offboard = () => {
-    const OktaUsers = ({query}) => {
+    const OktaUsers = ({ query }) => {
         const [users, setUsers] = useState([])
         useEffect(() => {
             fetch(`https://42fctjltu4.execute-api.us-east-1.amazonaws.com/test/getusers`).then((response) => response.json())
@@ -14,27 +14,27 @@ const Offboard = () => {
             if (query.input === '') {
                 return el;
             }
-          
+
             else {
                 return el.profile.displayName.toLowerCase().includes(query)
             }
         })
         return (filteredData.map((e) =>
-        <tr class="table__data-row">
-            <td colspan="2" data-label="Person & username">
-                <div>
-                    <p class="ts-user-name">{e.profile.displayName}</p>
-                    <p class="ts-user-email">{e.profile.title}</p>
-                </div>
-            </td>
-            <td colspan="2" data-label="Primary email">
-                {e.profile.email}
-            </td>
-            <td data-label="Status">
-                <button class="btn" id='offboard-btn'>Offboard</button>
-            </td>
-        </tr>
-    ))
+            <tr class="table__data-row">
+                <td colspan="2" data-label="Person & username">
+                    <div>
+                        <p class="ts-user-name">{e.profile.displayName}</p>
+                        <p class="ts-user-email">{e.profile.title}</p>
+                    </div>
+                </td>
+                <td colspan="2" data-label="Primary email">
+                    {e.profile.email}
+                </td>
+                <td data-label="Status">
+                    <button class="btn" id='offboard-btn'>Offboard</button>
+                </td>
+            </tr>
+        ))
     }
 
     const [inputText, setInputText] = useState("");

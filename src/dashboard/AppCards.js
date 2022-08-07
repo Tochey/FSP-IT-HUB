@@ -32,7 +32,7 @@ const AppCards = () => {
                   </div> */}
                   <img
                     class="sloth-img"
-                    src="./assets/images/sloth.png"
+                    src="https://hubassets132.s3.amazonaws.com/assets/images/sloth.png"
                     alt="..."
                   />
                   <h6 class="card-title">Asset Automation</h6>
@@ -42,7 +42,7 @@ const AppCards = () => {
                 <div class="card">
                   <img
                     class="mfa-img"
-                    src="./assets/images/2mfa-removebg-preview.png"
+                    src="https://hubassets132.s3.amazonaws.com/assets/images/2mfa-removebg-preview.png"
                     alt="..."
                   />
                   <h6 class="card-title">Verification Codes</h6>

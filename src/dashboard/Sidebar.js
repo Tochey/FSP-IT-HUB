@@ -11,7 +11,7 @@ const Sidebar = () => {
                 <li class="nav-item sidebar-brand">
                     {/* eslint-disable-next-line */}
                         <a>
-                            <img src="./assets/images/flagship_logo_standard.jpg" alt="..." />
+                            <img src="https://hubassets132.s3.amazonaws.com/assets/images/flagship_logo_standard.jpg" alt="..." />
                         </a>
                 </li>
                     </Link>

@@ -19,7 +19,7 @@ const AppCards = () => {
                 <div class="card">
                   <img
                     class="offboard-img"
-                    src="./assets/images/offboard-removebg-preview.png"
+                    src="https://hubassets132.s3.amazonaws.com/assets/images/offboard-removebg-preview.png"
                     alt="..."
                   />
                   <h6 class="card-title">Employee Offboard</h6>

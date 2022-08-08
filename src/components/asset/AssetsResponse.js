@@ -22,7 +22,6 @@ const AssetsResponse = () => {
         <header>
         </header>
         <div className="login-box2">
-
           <h5>Recently Assigned ({count}) </h5>
 
           <div className='mini-child'>

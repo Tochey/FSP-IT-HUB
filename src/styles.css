@@ -365,7 +365,7 @@ body {
   width: 100%;
   margin: 0 auto;
   margin-bottom: 2px;
-  margin-top: 33.5px;
+  margin-top: 32.5px;
 }
 
 
@@ -395,4 +395,9 @@ body {
   border: none !important;
   color: white;
 }
-/*# sourceMappingURL=styles.css.map */
+
+.tochi-div{
+  height: 100vh;
+ padding: 300px;
+}
+

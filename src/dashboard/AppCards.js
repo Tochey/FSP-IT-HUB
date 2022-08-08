@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/styles.css";
+import "../styles.css";
 import { Link } from "react-router-dom";
 const AppCards = () => {
   return (
@@ -54,7 +54,7 @@ const AppCards = () => {
                     class="onboard-img"
                     src="https://hubassets132.s3.amazonaws.com/assets/images/on-removebg-preview.png"
                     alt="..."
-                  />          
+                  />
                   <h6 class="card-title">Employee Onboard</h6>
                 </div>
                 {/* </Link> */}

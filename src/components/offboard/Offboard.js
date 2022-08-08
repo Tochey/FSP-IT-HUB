@@ -1,10 +1,68 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from "react-router-dom";
 import './offboard.css'
 
 const Offboard = () => {
     const [users, setUsers] = useState([])
     const [show, setShow] = useState(false)
+    const [show2, setShow2] = useState(false)
     const [email, setEmail] = useState()
+    const [displayName, setDisplayName] = useState()
+  
+
+   
+    const ResponseDialog = ({ userName }) => {
+
+        return (
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="true">
+                <div class="modal-dialog alert-popup2" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close" onClick={(() => setShow(false))}>
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Offboard {userName}?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={(e) => setShow(true)}>Go Back</button>
+                            <Link to={`/tochi:${email}`} >
+                            <button type="button" class="btn btn-primary btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal2" >Proceed</button>
+                           
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+    // data-bs-toggle="modal" data-bs-target="#exampleModal2" 
+
+    // const ResponseDialog2 = ({ userEmail, isOpen2 }) => {
+    //     console.log(catFact)
+    //     return (
+    //         <div id="exampleModal2" class="modal" >
+    //             <div class="modal-dialog modal-fullscreen">
+    //                 <div class="modal-content">
+    //                     <div class="modal-header">
+    //                         <h5 class="modal-title">Click to view Offboard Logs for {userEmail}</h5>
+    //                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={() => setShow(false)}></button>
+    //                     </div>
+    //                     <div class="modal-body">
+    //                         <h1>{catFact.fact}</h1>
+    //                     </div>
+    //                     <div class="modal-footer">
+    //                         {/* <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={() => setShow(false)}>Close</button>
+    //                     <button type="button" class="btn btn-primary">Save changes</button> */}
+    //                     </div>
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     )
+    // }
 
     const Test = ({ isOpen, userEmail }) => {
 
@@ -18,7 +76,7 @@ const Offboard = () => {
             </div>)
     }
 
-    const ImportantPeople = ({ email }) => {
+    const ImportantPeople = ({ email, userName }) => {
         const cantOffboard = ['nafeyan@flagshippioneering.com', 'ahmad@flagshippioneering.com', 'rrosiello@flagshippioneering.com', 'akahvejian@flagshippioneering.com', 'lafzelius@flagshippioneering.com', 'imartinez@flagshippioneering.com']
         for (let name of cantOffboard) {
 
@@ -34,6 +92,7 @@ const Offboard = () => {
                 <button type="button" class="btn btn-danger offboard-btn" onClick={() => {
                     setShow(true)
                     setEmail(email)
+                    setDisplayName(userName)
                 }}>Offboard</button>
             </td>
         )
@@ -76,11 +135,13 @@ const Offboard = () => {
                     <td colspan="2" data-label="Primary email">
                         {e.profile.email}
                     </td>
-                    <ImportantPeople email={e.profile.email} />
+                    <ImportantPeople email={e.profile.email} userName={e.profile.displayName} />
                 </tr>
             </>
         ))
     }
+
+
 
     const [inputText, setInputText] = useState("");
     let handleChange = (e) => {
@@ -141,44 +202,8 @@ const Offboard = () => {
                     </div>
                     <Test isOpen={show} userEmail={email} />
                 </div>
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
-                    <div class="modal-dialog alert-popup2" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
-                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close" onClick={(() =>
-                                    setShow(false)
-                                )}>
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <p>Offboard the user below?</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={(e) => setShow(false)}>Go Back</button>
-                                <button type="button" class="btn btn-primary btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal2">Proceed</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="exampleModal2" class="modal">
-                    <div class="modal-dialog modal-fullscreen">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">Offboard Logs</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={() => setShow(false)}></button>
-                            </div>
-                            <div class="modal-body">
-                                <p>The modal body is where all the text, images, and links go.</p>
-                            </div>
-                            <div class="modal-footer">
-                                {/* <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={() => setShow(false)}>Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button> */}
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <ResponseDialog userName={displayName} userEmail={email} />
+                {/* <ResponseDialog2 userEmail={email} /> */}
             </div>
         </div>
     )

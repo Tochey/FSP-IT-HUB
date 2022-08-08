@@ -7,7 +7,7 @@ const Navbar = () => {
         {/* eslint-disable-next-line */}
             <a class="navbar-brand">
           
-                <img src="./assets/images/flagship_logo_mark-01.png" alt="..." />
+                <img src="https://hubassets132.s3.amazonaws.com/assets/images/flagship_logo_mark-01.png" alt="..." />
             </a>
 
             <h5 class="fw-bold">Flagship IT HUB</h5>

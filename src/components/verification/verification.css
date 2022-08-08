@@ -9,6 +9,10 @@
   display: grid;
   place-items: center;
 }
+
+.table-div table{
+  width: 50%;
+}
 #customers {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
@@ -19,16 +23,15 @@
   #customers td, #customers th {
     border: 1px solid black;
     padding: 8px;
-  }
+  } 
   
   /* #customers tr:nth-child(even){background-color: whitesmoke} */
   
-  /* #customers tr:hover {background-color: rgb(0, 0, 0.9);} */
   
-  #customers th {
+ #customers th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
     background-color: white;
     color: black;
-  }
+  } 

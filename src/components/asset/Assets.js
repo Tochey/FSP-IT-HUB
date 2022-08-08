@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from 'moment';
 import axios from 'axios'
+import AssetsResponse from './AssetsResponse';
 
 const Assets = () => {
   let userInput;
@@ -35,13 +36,11 @@ const Assets = () => {
 
   const handlePost = function () {
   
-    axios.post("https://vzouk5y25m.execute-api.us-east-1.amazonaws.com/testing/call", info).then((e) => {
+    axios.post(process.env.REACT_APP_AG_EXECUTE_ASSET_LAMDA, info).then((e) => {
       alert(e.data)
     })
     .catch((e) => alert(e.response()))
     
-
-
     setInfo({
       firstName: "",
       lastName: "",
@@ -56,8 +55,7 @@ const Assets = () => {
   return (
     <>
       <div className="main-container">
-        <header>
-        </header>
+      <AssetsResponse />
         <div className="login-box">
           <h5>Assign Employee Assets</h5>
           <form>
@@ -100,7 +98,7 @@ const Assets = () => {
               }} name="purchaseDate" />
             </div>
             {/* eslint-disable-next-line */}
-            <a onClick={handlePost}>
+            <a onClick={() => handlePost}>
               <span></span>
               <span></span>
               <span></span>
@@ -110,7 +108,6 @@ const Assets = () => {
           </form>
         </div>
       </div>
-
     </>
   )
 }

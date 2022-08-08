@@ -98,7 +98,7 @@ const Assets = () => {
               }} name="purchaseDate" />
             </div>
             {/* eslint-disable-next-line */}
-            <a onClick={() => handlePost}>
+            <a onClick={() => handlePost()}>
               <span></span>
               <span></span>
               <span></span>

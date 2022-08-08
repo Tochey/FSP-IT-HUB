@@ -63,7 +63,7 @@ const Assets = () => {
               {/* <input type="text" name="lname" required id="to-clear" onChange={(e) => handleChange(e)} /> */}
               <select name="packageNumber" onChange={((e) => handleChange(e))}>
                 <option value={0}>Please select a company</option>
-                <option value={1}>Flagship pioneering(HQ)</option>
+                <option value={1}>Flagship pioneering(HQf)</option>
                 <option value={2}>FL-85</option>
                 <option value={3}>FL-81</option>
                 <option value={4}>FL-90</option>

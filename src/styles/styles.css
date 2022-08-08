@@ -361,6 +361,14 @@ body {
   margin-top: 10px;
 }
 
+.onboard-img {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 2px;
+  margin-top: 33.5px;
+}
+
+
 .sloth-img > h6 {
   margin-top: 30px;
 }

@@ -15,69 +15,49 @@ const AppCards = () => {
                 class="ts-app-cards"
                 data-bs-toggle-container="flag-ship-cards"
               >
-              <Link to='/user-offboard'>
-                <div class="card">
-                  <img
-                    class="offboard-img"
-                    src="https://hubassets132.s3.amazonaws.com/assets/images/offboard-removebg-preview.png"
-                    alt="..."
-                  />
-                  <h6 class="card-title">Employee Offboard</h6>
-                </div>
+                <Link to='/user-offboard'>
+                  <div class="card">
+                    <img
+                      class="offboard-img"
+                      src="https://hubassets132.s3.amazonaws.com/assets/images/offboard-removebg-preview.png"
+                      alt="..."
+                    />
+                    <h6 class="card-title">Employee Offboard</h6>
+                  </div>
                 </Link>
                 <Link to='/asset-automation'>
-                <div class="card">
-                  {/* <div class="d-flex justify-content-end">
+                  <div class="card">
+                    {/* <div class="d-flex justify-content-end">
                     <i class="bi bi-three-dots"></i>
                   </div> */}
-                  <img
-                    class="sloth-img"
-                    src="https://hubassets132.s3.amazonaws.com/assets/images/sloth.png"
-                    alt="..."
-                  />
-                  <h6 class="card-title">Asset Automation</h6>
-                </div>
+                    <img
+                      class="sloth-img"
+                      src="https://hubassets132.s3.amazonaws.com/assets/images/sloth.png"
+                      alt="..."
+                    />
+                    <h6 class="card-title">Asset Automation</h6>
+                  </div>
                 </Link>
                 <Link to='/verification-codes'>
-                <div class="card">
-                  <img
-                    class="mfa-img"
-                    src="https://hubassets132.s3.amazonaws.com/assets/images/2mfa-removebg-preview.png"
-                    alt="..."
-                  />
-                  <h6 class="card-title">Verification Codes</h6>
-                </div>
+                  <div class="card">
+                    <img
+                      class="mfa-img"
+                      src="https://hubassets132.s3.amazonaws.com/assets/images/2mfa-removebg-preview.png"
+                      alt="..."
+                    />
+                    <h6 class="card-title">Verification Codes</h6>
+                  </div>
                 </Link>
-                <Link to='/user-offboard'>
+                {/* <Link to='/user-onboard'> */}
                 <div class="card">
                   <img
-                    class="offboard-img"
-                    src=""
+                    class="onboard-img"
+                    src="https://hubassets132.s3.amazonaws.com/assets/images/on-removebg-preview.png"
                     alt="..."
-                  />
+                  />          
                   <h6 class="card-title">Employee Onboard</h6>
                 </div>
-                </Link>
-                <Link to='/user-offboard'>
-                <div class="card">
-                  <img
-                    class="offboard-img"
-                    src=""
-                    alt="..."
-                  />
-                  <h6 class="card-title">Jamf</h6>
-                </div>
-                </Link>
-                <Link to='/user-offboard'>
-                <div class="card">
-                  <img
-                    class="offboard-img"
-                    src=""
-                    alt="..."
-                  />
-                  <h6 class="card-title">MS Intune</h6>
-                </div>
-                </Link>
+                {/* </Link> */}
               </div>
             </div>
           </div>

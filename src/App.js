@@ -6,6 +6,7 @@ import Analytics from './components/Analytics'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Verification from './components/verification/Verification';
 import Offboard from './components/offboard/Offboard';
+import Onboard from './components/onboard/Onboard';
 import About from './components/About';
 
 
@@ -26,6 +27,7 @@ function App() {
               } />
               <Route exact path="/asset-automation" element={<Assets />} />
               <Route exact path="/user-offboard" element={<Offboard />} />
+              <Route exact path="/user-onboard" element={<Onboard />} />
               <Route exact path="/verification-codes" element={<Verification />} />
               <Route exact path="/analytics" element={<Analytics />} />
               <Route exact path="/about" element={<About/>} />

@@ -40,7 +40,7 @@
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.4);
     border-radius: 10px;
-    max-height: 300px;
+    max-height: 450px;
     overflow: auto;
   }
 

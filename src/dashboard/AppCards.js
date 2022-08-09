@@ -15,6 +15,14 @@ const AppCards = () => {
                 class="ts-app-cards"
                 data-bs-toggle-container="flag-ship-cards"
               >
+                <div class="card">
+                  <img
+                    class="onboard-img"
+                    src="https://hubassets132.s3.amazonaws.com/assets/images/on-removebg-preview.png"
+                    alt="..."
+                  />
+                  <h6 class="card-title">Employee Onboard</h6>
+                </div>
                 <Link to='/user-offboard'>
                   <div class="card">
                     <img
@@ -22,7 +30,7 @@ const AppCards = () => {
                       src="https://hubassets132.s3.amazonaws.com/assets/images/offboard-removebg-preview.png"
                       alt="..."
                     />
-                    <h6 class="card-title">Employee Offboard</h6>
+                    <h6 class="card-title">Employee Off-board</h6>
                   </div>
                 </Link>
                 <Link to='/asset-automation'>
@@ -49,14 +57,6 @@ const AppCards = () => {
                   </div>
                 </Link>
                 {/* <Link to='/user-onboard'> */}
-                <div class="card">
-                  <img
-                    class="onboard-img"
-                    src="https://hubassets132.s3.amazonaws.com/assets/images/on-removebg-preview.png"
-                    alt="..."
-                  />
-                  <h6 class="card-title">Employee Onboard</h6>
-                </div>
                 {/* </Link> */}
               </div>
             </div>

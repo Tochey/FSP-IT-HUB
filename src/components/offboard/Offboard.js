@@ -5,12 +5,11 @@ import './offboard.css'
 const Offboard = () => {
     const [users, setUsers] = useState([])
     const [show, setShow] = useState(false)
-    const [show2, setShow2] = useState(false)
     const [email, setEmail] = useState()
     const [displayName, setDisplayName] = useState()
-  
 
-   
+
+
     const ResponseDialog = ({ userName }) => {
 
         return (
@@ -27,10 +26,11 @@ const Offboard = () => {
                             <p>Offboard {userName}?</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={(e) => setShow(true)}>Go Back</button>
-                            <Link to={`/tochi:${email}`} >
-                            <button type="button" class="btn btn-primary btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal2" >Proceed</button>
-                           
+                            <Link to={`/schedule/${email}`} >
+                                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" >Schedule</button>
+                            </Link>
+                            <Link to={`/offboard/${email}`} >
+                                <button type="button" class="btn btn-primary btn-danger" data-bs-toggle="modal" >Offboard now</button>
                             </Link>
                         </div>
                     </div>
@@ -38,31 +38,6 @@ const Offboard = () => {
             </div>
         )
     }
-
-    // data-bs-toggle="modal" data-bs-target="#exampleModal2" 
-
-    // const ResponseDialog2 = ({ userEmail, isOpen2 }) => {
-    //     console.log(catFact)
-    //     return (
-    //         <div id="exampleModal2" class="modal" >
-    //             <div class="modal-dialog modal-fullscreen">
-    //                 <div class="modal-content">
-    //                     <div class="modal-header">
-    //                         <h5 class="modal-title">Click to view Offboard Logs for {userEmail}</h5>
-    //                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={() => setShow(false)}></button>
-    //                     </div>
-    //                     <div class="modal-body">
-    //                         <h1>{catFact.fact}</h1>
-    //                     </div>
-    //                     <div class="modal-footer">
-    //                         {/* <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={() => setShow(false)}>Close</button>
-    //                     <button type="button" class="btn btn-primary">Save changes</button> */}
-    //                     </div>
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     )
-    // }
 
     const Test = ({ isOpen, userEmail }) => {
 
@@ -152,11 +127,6 @@ const Offboard = () => {
     return (
         <div className='main-app'>
             <div class="table-section">
-                <div className='schedule-btn'>
-                    <button>
-                        Schedule
-                    </button>
-                </div>
                 <div class="container">
                     <div class="table-header">
                         <div class="search-box" onChange={(e) => handleChange(e)}>

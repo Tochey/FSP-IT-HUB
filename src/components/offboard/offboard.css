@@ -18,22 +18,6 @@
   margin: 0 auto;
 }
 
-.schedule-btn{
-  text-align: end;
-}
-
-.schedule-btn button{
-  margin-right: 13px;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-color: rgb(0, 109, 149);
-  color: rgb(0, 109, 149);
-  font-weight: bold;
-  background-color: white;
-  border-radius: 5px;
-  border-width: 2px;
-}
-
 .ts-table-container {
   display: grid;
   grid-template-columns: 200px auto;

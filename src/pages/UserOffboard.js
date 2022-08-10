@@ -30,9 +30,9 @@ const UserOffboard = () => {
             //     <h1>fact is : {catFact.fact}</h1></div>
             <div className="tochi-div">
                 <div class="accordion" id="accordionPanelsStayOpenExample">
-                    <div class="accordion-item">
+                    <div class="accordion-item" >
                         <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne" style={{color : 'rgb(0, 109, 149)', fontSize : '17px', fontWeight : 'bold'}}>
                                 Automated Processes
                             </button>
                         </h2>
@@ -45,7 +45,7 @@ const UserOffboard = () => {
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo" style={{color : 'rgb(0, 109, 149)', fontSize : '17px', fontWeight : 'bold'}}>
                                TO-DO Manually
                             </button>
                         </h2>
@@ -55,9 +55,6 @@ const UserOffboard = () => {
                             </div>
                         </div>
                     </div>
-                    
-                    
-                    
                 </div>
             </div>
         )

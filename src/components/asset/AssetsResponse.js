@@ -16,7 +16,6 @@ const AssetsResponse = () => {
 
   }, [])
 
-  
   return (
     <>
         <header>

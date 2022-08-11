@@ -1,0 +1,26 @@
+
+.accordion-body img{
+width: 175px;
+height: auto;
+padding: 0;
+}
+
+.okta-img{
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+.druva-img{
+   margin-left: 10px;
+   margin-bottom: 20px;
+}
+.accordion-body p{
+    margin-left: 10px;
+}
+
+
+.loader{
+   height: 100vh;
+display: flex;
+justify-content: center;
+  align-items: center;
+}

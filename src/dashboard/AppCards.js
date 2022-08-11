@@ -18,6 +18,7 @@ const AppCards = () => {
                 class="ts-app-cards"
                 data-bs-toggle-container="flag-ship-cards"
               >
+               <Link to='/user-onboard'>
                 <div class="card">
                   <img
                     class="onboard-img"
@@ -26,6 +27,7 @@ const AppCards = () => {
                   />
                   <h6 class="card-title">Employee Onboard</h6>
                 </div>
+                </Link>
                 <Link to='/user-offboard'>
                   <div class="card">
                     <img
@@ -37,10 +39,7 @@ const AppCards = () => {
                   </div>
                 </Link>
                 <Link to='/asset-automation'>
-                  <div class="card">
-                    {/* <div class="d-flex justify-content-end">
-                    <i class="bi bi-three-dots"></i>
-                  </div> */}
+                  <div class="card">               
                     <img
                       class="sloth-img"
                       src="https://hubassets132.s3.amazonaws.com/assets/images/sloth.png"

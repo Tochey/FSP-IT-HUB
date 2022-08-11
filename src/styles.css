@@ -186,6 +186,7 @@ body {
 
 .sidebar-nav .nav-item:hover {
   background-color: #f1f1f233;
+   color: rgb(0, 109, 149);
 }
 
 .sidebar-nav .sidebar-brand {
@@ -396,8 +397,15 @@ body {
   color: white;
 }
 
-.tochi-div{
-  height: 100vh;
-padding: 400px;
-}
+
+/* 
+.aws-img{
+position: absolute;
+right: 0px;
+bottom: 0px;
+height: 30px;
+width: auto;
+margin-right: 10px;
+margin-bottom: 5px;
+} */
 

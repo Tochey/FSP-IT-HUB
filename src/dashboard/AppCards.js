@@ -3,8 +3,6 @@ import "../styles.css";
 import { Link } from "react-router-dom";
 const AppCards = () => {
 
-
-
   return (
     <>
       <div id="page-content-wrapper">
@@ -34,9 +32,9 @@ const AppCards = () => {
                       class="offboard-img"
                       src="https://hubassets132.s3.amazonaws.com/assets/images/offboard-removebg-preview.png"
                       alt="..."
-                    />
+                   />
                     <h6 class="card-title">Employee Off-board</h6>
-                  </div>
+                 </div>
                 </Link>
                 <Link to='/asset-automation'>
                   <div class="card">               

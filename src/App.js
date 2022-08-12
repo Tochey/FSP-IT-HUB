@@ -19,7 +19,7 @@ function App() {
         <>
           <Router >
             <Sidebar />
-            {/* <Navbar /> */}
+            <Navbar />
             <Routes>
               <Route exact path="/" element={<AppCards />} />
               <Route exact path="/asset-automation" element={<Assets />} />

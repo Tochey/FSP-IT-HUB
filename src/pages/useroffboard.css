@@ -1,26 +1,73 @@
+.offboard-container {
+  padding: 100px;
+  border-right-style: none;
+}
+/* .accordion-body img {
+  width: 70px;
+  height: auto;
 
-.accordion-body img{
-width: 175px;
-height: auto;
-padding: 0;
-}
-
-.okta-img{
-    margin-left: 10px;
-    margin-bottom: 15px;
-}
-.druva-img{
-   margin-left: 10px;
-   margin-bottom: 20px;
-}
-.accordion-body p{
-    margin-left: 10px;
-}
+} */
 
 
-.loader{
-   height: 100vh;
-display: flex;
-justify-content: center;
+.okta-img  {
+  width: 80px;
+  height: auto;
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+
+.egnyte-img  {
+  width: 130px;
+  height: auto;
+  /* margin-left: 10px; */
+  margin-bottom: 15px;
+}
+.druva-img {
+  width: 100px;
+  height: auto;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.ms-img {
+  width: 170px;
+  height: auto;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.notion-img {
+  width: 70px;
+  height: auto;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.jamf-img {
+  height: auto;
+  width: 100px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+
+.loader {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
   align-items: center;
+}
+
+.accordion-body ul{
+  text-decoration: none;
+  list-style-type:none;
+}
+
+.accordion-body li{
+ padding-bottom: 10px;
+}
+
+.user-groups li{
+  list-style: circle;
+  font-weight: bold;
+  color:  rgb(0, 109, 149);;
 }

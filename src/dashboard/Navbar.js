@@ -1,14 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     let isToggled = false
     return (
         <div class="navbar flex-nowrap">
         {/* eslint-disable-next-line */}
+        <Link to={"/"}>
             <a class="navbar-brand">
-          
                 <img src="https://hubassets132.s3.amazonaws.com/assets/images/flagship_logo_mark-01.png" alt="..." />
             </a>
+        </Link>
 
             <h5 class="fw-bold">Flagship IT HUB</h5>
 

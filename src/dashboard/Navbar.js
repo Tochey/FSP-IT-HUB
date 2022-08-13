@@ -1,7 +1,27 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
+import { useOktaAuth } from '@okta/okta-react';
 
 const Navbar = () => {
+
+    const { authState, oktaAuth } = useOktaAuth();
+    const [userInfo, setUserInfo] = useState(null)
+  
+    useEffect(() => {
+      if (!authState || !authState.isAuthenticated) {
+        // When user isn't authenticated, forget any user info
+        setUserInfo(null);
+      } else {
+        // setUserInfo(authState.idToken.claims);
+        // You can also get user information from the `/userinfo` endpoint
+        
+        oktaAuth.getUser().then((info) => {
+          setUserInfo(info?.name);
+        });
+      }
+    }, [authState, oktaAuth]);
+
+   console.log(userInfo)
     let isToggled = false
     return (
         <div class="navbar flex-nowrap">
@@ -21,7 +41,7 @@ const Navbar = () => {
                         // dropdown-toggle
                         data-bs-toggle="dropdown"
                         aria-expanded="false" >
-                        <span class="fw-bold"> camanze </span>
+                        <span class="fw-bold"> {userInfo} </span>
                         <br />
                         <span> Flagship Pioneering </span>
                     </p>

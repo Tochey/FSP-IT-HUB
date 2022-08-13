@@ -26,10 +26,10 @@ const AssetsResponse = () => {
           <div className='mini-child'>
             {state.map((e) => 
           <div className='asset-history'>
-            <p>Employee:<span>{e.employee.S}</span></p>
-            <p>Package: <span>{e.package.S}</span></p>
-            <p>Status : <span>{e.status.S}</span></p>
-            <p>Date : <span>{e.date.S}</span></p>
+            <p>Employee:<span> {e.employee.S}</span></p>
+            <p>Package: <span> {e.package.S}</span></p>
+            <p>Status : <span style={{color : 'green'}}>{e.status.S}</span></p>
+            <p>Date : <span> {e.date.S}</span></p>
           </div>
             )}
           </div>

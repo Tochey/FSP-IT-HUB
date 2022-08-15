@@ -42,15 +42,15 @@ function App() {
             <Sidebar />
             <Navbar />
             <SecureRoute exact path="/" component={AppCards} />
-            <Route exact path="/asset-automation" component={Assets} />
-            <Route exact path="/user-offboard" component={Offboard} />
-            <Route exact path="/user-onboard" component={Onboard} />
-            <Route exact path="/verification-codes" component={Verification} />
-            <Route exact path="/offboard/:id" component={UserOffboard} />
-            <Route exact path="/schedule/:id" component={ScheduleOffboard} />
-            <Route exact path="/analytics" component={Analytics} />
-            {/* <Route path="/login/callback" component={LoginCallback} /> */}
-            <Route exact path="/about" component={About} />
+            <SecureRoute exact path="/asset-automation" component={Assets} />
+            <SecureRoute exact path="/user-offboard" component={Offboard} />
+            <SecureRoute exact path="/user-onboard" component={Onboard} />
+            <SecureRoute exact path="/verification-codes" component={Verification} />
+            <SecureRoute exact path="/offboard/:id" component={UserOffboard} />
+            <SecureRoute exact path="/schedule/:id" component={ScheduleOffboard} />
+            <SecureRoute exact path="/analytics" component={Analytics} />
+            <Route path="/login/callback" component={LoginCallback} />
+            <SecureRoute exact path="/about" component={About} />
           </Security>
 
         </>

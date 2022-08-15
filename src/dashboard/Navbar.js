@@ -21,7 +21,6 @@ const Navbar = () => {
       }
     }, [authState, oktaAuth]);
 
-   console.log(userInfo)
     let isToggled = false
     return (
         <div class="navbar flex-nowrap">

@@ -13,7 +13,7 @@ import UserOffboard from './pages/UserOffboard'
 import { Security, SecureRoute, LoginCallback } from "@okta/okta-react";
 import { OktaAuth, toRelativeUrl } from "@okta/okta-auth-js";
 import { useHistory } from "react-router-dom"
-// import Login from  "./components/login/Login"
+import Login from  "./components/login/Login"
 let SCOPES = 'openid profile email'
 
 console.log(process.env.REACT_APP_OKTA_ISSUER)
@@ -39,18 +39,20 @@ function App() {
     <div className="App">
         <div id="wrapper"  >
           <>
+         
             <Route path="/login/callback" component={LoginCallback} />
-            <SecureRoute exact={true} path="*" component={Sidebar} />
+             {/* <SecureRoute path="/" component={Login} /> */}
+             <SecureRoute exact={true} path="*" component={Sidebar} />
             <SecureRoute exact={true} path="*" component={Navbar} />
             <SecureRoute exact={true} path="/offboard/:id" component={UserOffboard} />
-            <SecureRoute exact={true} path="/schedule/:id" component={ScheduleOffboard} />
+            <SecureRoute exact={true} path="/schedule/:id" component={ScheduleOffboard} /> 
             <SecureRoute exact={true} path="/" component={AppCards} />
-            <SecureRoute exact={true} path="/asset-automation" component={Assets} />
+             <SecureRoute exact={true} path="/asset-automation" component={Assets} />
             <SecureRoute exact={true} path="/user-offboard" component={Offboard} />
             <SecureRoute exact={true} path="/user-onboard" component={Onboard} />
             <SecureRoute exact={true} path="/verification-codes" component={Verification} />
             <SecureRoute exact={true} path="/analytics" component={Analytics} />
-            <SecureRoute exact={true} path="/about" component={About} />
+            <SecureRoute exact={true} path="/about" component={About} /> 
           </>
         </div>
       </div>

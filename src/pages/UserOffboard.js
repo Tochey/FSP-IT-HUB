@@ -95,7 +95,7 @@ const UserOffboard = () => {
             <div className="container">
                 <div className="text-center loader">
                     <div className="spinner-border" role="status">
-                        <span className="visually-hidden">Loading...</span>
+                        <span className="visually-hidden">Loading....</span>
                     </div>
                 </div>
             </div>

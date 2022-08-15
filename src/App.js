@@ -36,30 +36,28 @@ function App() {
 
   return (
     <Security restoreOriginalUri={restoreOriginalUri} oktaAuth={oktaAuth}>
-    <div className="App">
-      <div id="wrapper"  >
-        <>
-      
-          
-            {/* <Sidebar /> */}
-            {/* <Navbar /> */}
-            <SecureRoute exact path="/" component={AppCards} />
-            <SecureRoute exact path="/asset-automation" component={Assets} />
-            <SecureRoute exact path="/user-offboard" component={Offboard} />
-            <SecureRoute exact path="/user-onboard" component={Onboard} />
-            <SecureRoute exact path="/verification-codes" component={Verification} />
-            <SecureRoute exact path="/offboard/:id" component={UserOffboard} />
-            <SecureRoute exact path="/schedule/:id" component={ScheduleOffboard} />
-            <SecureRoute exact path="/analytics" component={Analytics} />
+      <div className="App">
+        <div id="wrapper"  >
+          <>
             <Route path="/login/callback" component={LoginCallback} />
-            <SecureRoute exact path="/about" component={About} />
+             {/* <Sidebar /> 
+             <Navbar />  */}
+             <SecureRoute exact={true} path="*" component={Sidebar} />
+             <SecureRoute exact={true} path="*" component={Navbar} />
+            <SecureRoute exact={true} path="/" component={AppCards} />
+            <SecureRoute exact={true} path="/asset-automation" component={Assets} />
+            <SecureRoute exact={true} path="/user-offboard" component={Offboard} />
+            <SecureRoute exact={true} path="/user-onboard" component={Onboard} />
+            <SecureRoute exact={true} path="/verification-codes" component={Verification} />
+            <SecureRoute exact={true} path="/offboard/:id" component={UserOffboard} />
+            <SecureRoute exact={true} path="/schedule/:id" component={ScheduleOffboard} />
+            <SecureRoute exact={true} path="/analytics" component={Analytics} />
+            <SecureRoute exact={true} path="/about" component={About} />
 
-        </>
-
-
+          </>
+        </div>
       </div>
-    </div>
-          </Security>
+    </Security>
   );
 }
 

@@ -7,8 +7,6 @@ const AppCards = () => {
 
   return (
     <>
-    <Navbar /> 
-    <Sidebar />
       <div id="page-content-wrapper">
         <div class="container">
           <div class="main-data-container">

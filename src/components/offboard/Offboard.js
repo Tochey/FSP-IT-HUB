@@ -128,8 +128,6 @@ const Offboard = () => {
 
     return (
         <>
-        <Navbar /> 
-        <Sidebar />
         <div className='main-app'>
             <div class="table-section">
                 <div class="container">

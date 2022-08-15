@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import './offboard.css'
+import Navbar from '../../dashboard/Navbar';
+import Sidebar from '../../dashboard/Sidebar';
 
 const Offboard = () => {
     const [users, setUsers] = useState([])
@@ -125,6 +127,9 @@ const Offboard = () => {
     };
 
     return (
+        <>
+        <Navbar /> 
+        <Sidebar />
         <div className='main-app'>
             <div class="table-section">
                 <div class="container">
@@ -176,6 +181,7 @@ const Offboard = () => {
                 {/* <ResponseDialog2 userEmail={email} /> */}
             </div>
         </div>
+        </>
     )
 
 }

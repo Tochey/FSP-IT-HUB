@@ -1,10 +1,14 @@
 import React from "react";
-import "../styles.css";
 import { Link } from "react-router-dom";
+import "../styles.css";
+import Navbar from "./Navbar";
+import Sidebar from "./Sidebar";
 const AppCards = () => {
 
   return (
     <>
+    <Navbar /> 
+    <Sidebar />
       <div id="page-content-wrapper">
         <div class="container">
           <div class="main-data-container">

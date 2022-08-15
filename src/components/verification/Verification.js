@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import Navbar from '../../dashboard/Navbar'
 import './verification.css'
+import Sidebar from '../../dashboard/Sidebar'
 
 const Verification = () => {
   const [state, setstate] = useState([])
@@ -13,6 +15,8 @@ const Verification = () => {
 
   return (
     <>
+     <Navbar /> 
+    <Sidebar />
       <div className='table-div'>
         <table id="customers">
           <tr>

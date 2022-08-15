@@ -6,6 +6,8 @@ import moment from 'moment';
 import axios from 'axios'
 import AssetsResponse from './AssetsResponse';
 import Autocomplete from './Autocomplete';
+import Sidebar from '../../dashboard/Sidebar';
+import Navbar from '../../dashboard/Navbar';
 
 const Assets = () => {
 
@@ -65,6 +67,8 @@ const Assets = () => {
 
   return (
     <>
+      <Navbar />
+      <Sidebar />
       <div className="main-container">
         <AssetsResponse />
         <div className="login-box">

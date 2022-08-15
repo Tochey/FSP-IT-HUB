@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
+
 import { useParams } from "react-router-dom";
+import Navbar from "../dashboard/Navbar";
+import Sidebar from "../dashboard/Sidebar";
 import "./useroffboard.css";
 
 const UserOffboard = () => {
@@ -99,6 +102,9 @@ const UserOffboard = () => {
         );
     } else {
         return (
+            <>
+            <Navbar />
+            <Sidebar />
             <div className="container offboard-container">
                 <div class="accordion" id="accordionPanelsStayOpenExample">
                     <div class="accordion-item">
@@ -166,7 +172,7 @@ const UserOffboard = () => {
                             </button>
                         </h2>
                         <div
-                            id="panelsStayOpen-collapseTwo"
+                           id="panelsStayOpen-collapseTwo"
                             class="accordion-collapse collapse"
                             aria-labelledby="panelsStayOpen-headingTwo"
                         >
@@ -224,6 +230,7 @@ const UserOffboard = () => {
                     </div>
                 </div>
             </div>
+            </>
         );
     }
 };

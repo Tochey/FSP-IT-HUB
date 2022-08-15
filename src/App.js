@@ -35,12 +35,14 @@ function App() {
   };
 
   return (
+    <Security restoreOriginalUri={restoreOriginalUri} oktaAuth={oktaAuth}>
     <div className="App">
       <div id="wrapper"  >
         <>
-          <Security restoreOriginalUri={restoreOriginalUri} oktaAuth={oktaAuth}>
-            <Sidebar />
-            <Navbar />
+      
+          
+            {/* <Sidebar /> */}
+            {/* <Navbar /> */}
             <SecureRoute exact path="/" component={AppCards} />
             <SecureRoute exact path="/asset-automation" component={Assets} />
             <SecureRoute exact path="/user-offboard" component={Offboard} />
@@ -51,13 +53,13 @@ function App() {
             <SecureRoute exact path="/analytics" component={Analytics} />
             <Route path="/login/callback" component={LoginCallback} />
             <SecureRoute exact path="/about" component={About} />
-          </Security>
 
         </>
 
 
       </div>
     </div>
+          </Security>
   );
 }
 

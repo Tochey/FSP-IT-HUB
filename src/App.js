@@ -40,8 +40,7 @@ function App() {
         <>
           <Security restoreOriginalUri={restoreOriginalUri} oktaAuth={oktaAuth}>
             <Sidebar />
-            <Navbar
-            />
+            <Navbar />
             <SecureRoute exact path="/" component={AppCards} />
             <Route exact path="/asset-automation" component={Assets} />
             <Route exact path="/user-offboard" component={Offboard} />

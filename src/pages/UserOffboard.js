@@ -74,7 +74,7 @@ const UserOffboard = () => {
 
     useEffect(() => {
         fetch(
-            "https://h081rjb8il.execute-api.us-east-1.amazonaws.com/test/offboard",
+            process.env.REACT_APP_OFFBOARD_USER,
             {
                 method: "POST",
                 headers: {

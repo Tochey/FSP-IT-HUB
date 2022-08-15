@@ -49,7 +49,7 @@ function App() {
             <Route exact path="/offboard/:id" component={UserOffboard} />
             <Route exact path="/schedule/:id" component={ScheduleOffboard} />
             <Route exact path="/analytics" component={Analytics} />
-            <Route path="/login/callback" component={LoginCallback} />
+            {/* <Route path="/login/callback" component={LoginCallback} /> */}
             <Route exact path="/about" component={About} />
           </Security>
 

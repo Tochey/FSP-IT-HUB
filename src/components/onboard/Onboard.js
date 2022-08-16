@@ -2,7 +2,7 @@ import React from 'react'
 
 const Onboard = () => {
   return (
-    <div>
+    <div className="container offboard-container">
         <h1>COMING SOON</h1>
     </div>
   )

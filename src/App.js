@@ -35,8 +35,6 @@ function App() {
   return (
     <Security restoreOriginalUri={restoreOriginalUri} oktaAuth={oktaAuth}>
     <div className="App">
-    <div>
-            </div>
         <div id="wrapper"  >
           <>
             <Sidebar /> 

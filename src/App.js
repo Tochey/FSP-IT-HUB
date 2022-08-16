@@ -41,13 +41,13 @@ function App() {
             <Navbar />
             <Route path="/login/callback" component={LoginCallback} />
             <SecureRoute exact={true} path="/schedule/:id" component={ScheduleOffboard} /> 
+            <SecureRoute exact={true} path="/offboard/:id" component={UserOffboard} />
             <SecureRoute exact={true} path="/" component={AppCards} />
             <SecureRoute exact={true} path="/asset-automation" component={Assets} />
             <SecureRoute exact={true} path="/user-onboard" component={Onboard} />
             <SecureRoute exact={true} path="/verification-codes" component={Verification} />
             <SecureRoute exact={true} path="/analytics" component={Analytics} />
             <SecureRoute exact={true} path="/about" component={About} /> 
-            <SecureRoute exact={true} path="/offboard/:id" component={UserOffboard} />
             <SecureRoute exact={true} path="/user-offboard" component={Offboard} />
             {/* component={LoginCallback}   */}
           </>

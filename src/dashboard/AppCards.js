@@ -16,8 +16,7 @@ const AppCards = () => {
             <div class="mb-5">
               <div
                 class="ts-app-cards"
-                data-bs-toggle-container="flag-ship-cards"
-              >
+                data-bs-toggle-container="flag-ship-cards">
                <Link to='/user-onboard'>
                 <div class="card">
                   <img

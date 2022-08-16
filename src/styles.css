@@ -9,6 +9,7 @@ body {
   /* color: rgb(215, 210, 197); */
   color: rgb(0, 109, 149);
   font-family: 'Lato', sans-serif;
+
 }
 
 /* typography*/
@@ -39,7 +40,7 @@ body {
   padding-left: 0;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 #wrapper.toggled {

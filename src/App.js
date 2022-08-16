@@ -13,11 +13,9 @@ import UserOffboard from './pages/UserOffboard'
 import { Security, SecureRoute, LoginCallback } from "@okta/okta-react";
 import { OktaAuth, toRelativeUrl } from "@okta/okta-auth-js";
 import { useHistory } from "react-router-dom"
-import Login from  "./components/login/Login"
 let SCOPES = 'openid profile email'
 
-console.log(process.env.REACT_APP_OKTA_ISSUER)
-console.log(process.env.REACT_APP_CLIENTID)
+
 const config = {
   issuer: process.env.REACT_APP_OKTA_ISSUER,
   clientId: process.env.REACT_APP_CLIENTID,
@@ -37,21 +35,23 @@ function App() {
   return (
     <Security restoreOriginalUri={restoreOriginalUri} oktaAuth={oktaAuth}>
     <div className="App">
+    <div>
+            </div>
         <div id="wrapper"  >
           <>
-            <Route path="/login/callback" component={LoginCallback} /> 
-             {/* <SecureRoute path="/" component={Login} />  */}
-            <SecureRoute exact={true} path="*" component={Sidebar} />
-            <SecureRoute exact={true} path="*" component={Navbar} />
+            <Sidebar /> 
+            <Navbar />
+            <Route path="/login/callback" component={LoginCallback} />
             <SecureRoute exact={true} path="/schedule/:id" component={ScheduleOffboard} /> 
             <SecureRoute exact={true} path="/" component={AppCards} />
-             <SecureRoute exact={true} path="/asset-automation" component={Assets} />
+            <SecureRoute exact={true} path="/asset-automation" component={Assets} />
             <SecureRoute exact={true} path="/user-onboard" component={Onboard} />
             <SecureRoute exact={true} path="/verification-codes" component={Verification} />
             <SecureRoute exact={true} path="/analytics" component={Analytics} />
             <SecureRoute exact={true} path="/about" component={About} /> 
             <SecureRoute exact={true} path="/offboard/:id" component={UserOffboard} />
             <SecureRoute exact={true} path="/user-offboard" component={Offboard} />
+            {/* component={LoginCallback}   */}
           </>
         </div>
       </div>
@@ -60,4 +60,5 @@ function App() {
 }
 
 
+{/* <Route path="/" exact={true} component={Login} /> */}
 export default App;

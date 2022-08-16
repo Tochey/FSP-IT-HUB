@@ -1,9 +1,32 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import '../styles.css'
 import { Link } from "react-router-dom";
+import { useOktaAuth } from '@okta/okta-react';
 
 
 const Sidebar = () => {
+    const { authState, oktaAuth } = useOktaAuth();
+    const [userInfo, setUserInfo] = useState(null)
+
+    useEffect(() => {
+        if (!authState || !authState.isAuthenticated) {
+
+            // When user isn't authenticated, forget any user info
+            setUserInfo(null);
+        } else {
+            // setUserInfo(authState.idToken.claims);
+            // You can also get user information from the `/userinfo` endpoint
+
+            oktaAuth.getUser().then((info) => {
+                console.log(info)
+                setUserInfo(info?.name);
+            });
+        }
+    }, [authState, oktaAuth]);
+
+  
+
+    if (!authState?.isAuthenticated) return null
     return (
         <div id="sidebar-wrapper" class="sidebar-wrapper">
             <ul class="sidebar-nav">

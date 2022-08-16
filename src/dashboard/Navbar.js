@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useOktaAuth } from '@okta/okta-react';
 
@@ -6,30 +6,33 @@ const Navbar = () => {
 
     const { authState, oktaAuth } = useOktaAuth();
     const [userInfo, setUserInfo] = useState(null)
-  
+
     useEffect(() => {
-      if (!authState || !authState.isAuthenticated) {
-        // When user isn't authenticated, forget any user info
-        setUserInfo(null);
-      } else {
-        // setUserInfo(authState.idToken.claims);
-        // You can also get user information from the `/userinfo` endpoint
-        
-        oktaAuth.getUser().then((info) => {
-          setUserInfo(info?.name);
-        });
-      }
+        if (!authState || !authState.isAuthenticated) {
+
+            // When user isn't authenticated, forget any user info
+            setUserInfo(null);
+        } else {
+            // setUserInfo(authState.idToken.claims);
+            // You can also get user information from the `/userinfo` endpoint
+
+            oktaAuth.getUser().then((info) => {
+                setUserInfo(info?.name);
+            });
+        }
     }, [authState, oktaAuth]);
 
     let isToggled = false
+
+    if (!authState?.isAuthenticated) return null
     return (
         <div class="navbar flex-nowrap">
-        
-        <Link to={"/"}>
-            <a class="navbar-brand">
-                <img src="https://hubassets132.s3.amazonaws.com/assets/images/flagship_logo_mark-01.png" alt="..." />
-            </a>
-        </Link>
+
+            <Link to={"/"}>
+                <a class="navbar-brand">
+                    <img src="https://hubassets132.s3.amazonaws.com/assets/images/flagship_logo_mark-01.png" alt="..." />
+                </a>
+            </Link>
 
             <h5 class="fw-bold">Flagship IT HUB</h5>
 
@@ -44,7 +47,7 @@ const Navbar = () => {
                         <br />
                         <span> Flagship Pioneering </span>
                     </p>
-                    
+
                 </div>
                 <span id="menu-toggle">
                     <i class="bi bi-list" onClick={((e) => {

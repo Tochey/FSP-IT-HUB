@@ -24,7 +24,7 @@ const AppCards = () => {
                       src="https://hubassets132.s3.amazonaws.com/assets/images/on-removebg-preview.png"
                       alt="..."
                     />
-                    <h6 class="card-title"><a href="https://github.com/Tochey/FSP_Jamf"></a>Employee Onboard</h6>
+                    <a class="card-title" href="https://github.com/Tochey/FSP_Jamf" target="_blank">Jamf Policies</a>
                   </div>
                 {/* </Link> */}
                 <Link to='/user-offboard'>

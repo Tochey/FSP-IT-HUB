@@ -17,27 +17,26 @@ const AppCards = () => {
               <div
                 class="ts-app-cards"
                 data-bs-toggle-container="flag-ship-cards">
-                <Link to='/user-onboard'>
+                {/* <Link to='/user-onboard'> */}
                   <div class="card">
                     <img
                       class="onboard-img"
                       src="https://hubassets132.s3.amazonaws.com/assets/images/on-removebg-preview.png"
                       alt="..."
                     />
-                    <h6 class="card-title">Employee Onboard</h6>
+                    <h6 class="card-title"><a href="https://github.com/Tochey/FSP_Jamf"></a>Employee Onboard</h6>
                   </div>
-                </Link>
-                {/* <Link to=''> */}
+                {/* </Link> */}
+                <Link to='/user-offboard'>
                   <div class="card">
                     <img
                       class="offboard-img"
                       src="https://hubassets132.s3.amazonaws.com/assets/images/offboard-removebg-preview.png"
                       alt="..."
                     />
-                    <a href="https://github.com/Tochey/FSP_Jamf">link text</a>
                     <h6 class="card-title">Employee Off-board</h6>
                   </div>
-                {/* </Link> */}
+                </Link>
                 <Link to='/asset-automation'>
                   <div class="card">
                     <img
